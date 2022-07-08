@@ -34,7 +34,7 @@ function App() {
             return (
               <BudgetCard key={budget.id} name={budget.name} amount={amount} max={budget.max} onAddExpenseClick={()=> openAddExpenseModal(budget.id)} />)
           })}
-              <UncategorizedBudgetCard />
+              <UncategorizedBudgetCard onAddExpenseClick={openAddExpenseModal} />
               <TotalBudgetCard />
         </div>
       </Container>
