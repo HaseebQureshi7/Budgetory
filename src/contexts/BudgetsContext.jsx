@@ -36,13 +36,20 @@ export const BudgetsProvider = ({ children }) => {
     })
   }
   function deleteExpense({ id }) {
-    setBudgets(prevBudgets => {
-      return prevBudgets.filter(budget => budget.id !== id)
+    setExpenses(prevExpenses => {
+      return prevExpenses.filter(expense => expense.id !== id)
     })
   }
   function deleteBudget({ id }) {
     setExpenses(prevExpenses => {
-      return prevExpenses.filter(budget => budget.id !== id)
+      return prevExpenses.map(expense => {
+        if (expense.budgetId !== id) return expense
+        return { ...expense, budgetId: UNCATEGORIZED_BUDGET_ID }
+      })
+    })
+
+    setBudgets(prevBudgets => {
+      return prevBudgets.filter(budget => budget.id !== id)
     })
   }
 
