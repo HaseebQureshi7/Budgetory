@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*,
+::after,
+::before {
+  font-family: Montserrat;
+}
+
+.gradient {
+    background: linear-gradient(
+        to right,#0cc4e4 ,#0cc4e4,#ff6b08);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}

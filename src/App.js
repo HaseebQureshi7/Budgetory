@@ -1,3 +1,4 @@
+import "./styles.css";
 import { useState } from "react";
 import { Stack, Button } from "react-bootstrap"
 import { Container } from "react-bootstrap";
@@ -25,7 +26,10 @@ function App() {
     <>
       <Container className="my-4">
         <Stack direction='horizontal' gap='2' className="mb-4">
-          <h1 className="m-auto">Budgetory</h1>
+          <Stack direction='vertical'>
+          <h1 className="me-auto fw-bolder gradient">BUDGETORY</h1>
+          <h6 className="me-auto fw-lighter">EXPENSE TRACKER</h6>
+          </Stack>
           <Button variant="primary" onClick={() => setShowAddBudgetModal(true)}>Add Budget</Button>
           <Button variant="outline-primary" onClick={openAddExpenseModal}>Add Expenses</Button>
         </Stack>

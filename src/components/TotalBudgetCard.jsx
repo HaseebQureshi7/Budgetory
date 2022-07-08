@@ -10,6 +10,6 @@ export default function TotalBudgetCard() {
 
     if (max === 0) return null
     return (
-        <BudgetCard name={"Total"} grey max={max} amount={amount} hideButtons/>
+        <BudgetCard name={"TOTAL"} grey max={max} amount={amount} hideButtons/>
     )
 }
