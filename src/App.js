@@ -38,9 +38,9 @@ function App() {
     setStyling(styling)
   }
 
-  const localStorageKey = JSON.stringify(localStorage.Budgets)
   
   useEffect(()=> {
+    const localStorageKey = JSON.stringify(localStorage.Budgets)
     const localStorageKeyLength = localStorageKey.length
 
     if (localStorageKeyLength === 4) {
