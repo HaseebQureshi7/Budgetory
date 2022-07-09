@@ -12,3 +12,17 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
+.addNew {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addNew > h1 {
+  text-transform: uppercase;
+  color: lightgrey;
+  font-weight: bold;
+}
