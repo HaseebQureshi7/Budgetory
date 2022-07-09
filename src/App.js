@@ -38,9 +38,11 @@ function App() {
     setStyling(styling)
   }
 
-  const localStorageKeyLength = JSON.stringify(localStorage.Budgets).length
-
+  const localStorageKey = JSON.stringify(localStorage.Budgets)
+  
   useEffect(()=> {
+    const localStorageKeyLength = localStorageKey.length
+
     if (localStorageKeyLength === 4) {
       setVisibility("d-flex")
     } else {
@@ -54,7 +56,7 @@ function App() {
         <Stack direction={orientation} gap='2' className="mb-4">
           <Stack direction='vertical'>
             <h1 className={styling + " fw-bolder gradient"}>BUDGETORY</h1>
-            <h6 className={styling + " fw-lighter"}>EXPENSE TRACKER</h6>
+            <h6 className={styling + " fw-lighter mb-3"}>EXPENSE TRACKER</h6>
           </Stack>
           <Button className="btn btn-lg" variant="primary" onClick={() => (setShowAddBudgetModal(true), setVisibility("d-none"))}>+ Add Budget</Button>
           <Button className="btn btn-lg" variant="outline-primary" onClick={openAddExpenseModal}>+ Add Expenses</Button>
