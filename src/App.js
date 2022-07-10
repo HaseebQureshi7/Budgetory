@@ -25,6 +25,16 @@ function App() {
     setAddExpenseModalBudgetId(budgetId)
     setVisibility("d-none")
   }
+
+  useEffect(()=> {
+    const localStorageKey = JSON.stringify(localStorage.Budgets)
+    if (localStorageKey.length === 4) {
+      setVisibility("d-flex")
+    } else {
+      setVisibility("d-none")
+    }
+  }, [])
+
   useEffect(() => {
     if (window.matchMedia("(orientation: portrait)").matches) {
       changeOrientation("vertical", "m-auto")
@@ -38,17 +48,6 @@ function App() {
     setStyling(styling)
   }
 
-  
-  useEffect(()=> {
-    const localStorageKey = JSON.stringify(localStorage.Budgets)
-    const localStorageKeyLength = localStorageKey.length
-
-    if (localStorageKeyLength === 4) {
-      setVisibility("d-flex")
-    } else {
-      setVisibility("d-none")
-    }
-  }, [])
 
   return (
     <>
