@@ -28,8 +28,12 @@ function App() {
 
   useEffect(()=> {
     const localStorageKey = JSON.stringify(localStorage.Budgets)
-    if (localStorageKey.length === 4) {
-      setVisibility("d-flex")
+    if (localStorageKey) {
+      if (localStorageKey.length === 4) {
+        setVisibility("d-flex")
+      } else {
+        setVisibility("d-none")
+      }
     } else {
       setVisibility("d-none")
     }
